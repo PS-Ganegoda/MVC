@@ -1,0 +1,96 @@
+                MVC
+----------------------------------------
+
+* mvc stands for model,view,controller
+* view mean the interface of frontends
+
+*  controller is controll the bothodel   snd view 
+   that means controller is made connection between view and model
+   controller is a brain of the project
+    it coded by php
+
+
+* model means database
+  it is creating qury of databasechecking the results in model
+
+* why mvc?
+  it is very convinient
+  it makes your project update much easier
+
+* Router
+  router need to clean up the url by using router
+
+  we need router to tell the controller what pages to load 
+
+  router is a package of the url s that the controller can understand
+
+  -----just move to the architecture----
+
+  * Core folder is applications itselfs
+
+   yourwebsite/assets    so this'/' is navigate for another folder
+--------------------------------------------------------------------------------------------------
+
+   when we called some folder without assign function or file it is automativally redirect to the index.php file (if this folder have )
+
+
+
+
+   ----------------------------OOP CONCEPTS---------------------------------------------------
+   * this is the  main wya ti create fubctions in index.php
+        <?php
+             class myclass{
+             function myfunc()
+             {
+
+             }
+            function myfunc2()
+              {
+
+                }
+             
+        ?>
+             }
+
+    class is a blue print of the the designing the objects  
+
+    so then create a object we can used 
+            $variable = new Classname()   
+
+ * if not any html file dont put  the closing php tag in the project
+
+          function __constructor{
+
+          }
+    this is an special function that called the class itself.constructor is automstically run when the variable function is called imediately.
+
+    ----------------------------creating Router------------------------------------------
+
+    the GET variable is get the urls the get variables gets all vlues
+    after the question marks.
+
+    localhost/udemy/public/index.php?a=1;  =======> Array([a]=>1)
+
+    localhost/udemy/public/index.php?a=1&b=8&c=9;  =======> Array([a]=>1[b]=>8[c]=>9)
+
+-------------------HTACCESS FILE-----------------
+
+ used to manupulate apache 
+
+        -                                                                                                   |                                                                                                  |       RewriteEngine On
+        |     RewriteCond %{REQUEST_FILENAME} !-f
+        |    RewriteCond %{REQUEST_FILENAME} !-d
+        |    RewriteRule ^(.*)$ index.php?url=$1 [L,QSA]
+        |
+  RewriteEngine On means the apache engin on we can rewrite conditions and rules
+
+  'RewriteCond %{REQUEST_FILENAME} !-f
+   RewriteCond %{REQUEST_FILENAME} !-d' means if the file name in the url it should load the if if the directory then load it.
+
+
+   then the rule RewriteRule ^(.*)$ index.php?url=$1 [L,QSA] means the beggining to the end any thing that in the query string pushed to the index.php , if not invalied create url and put the all things.
+
+
+
+
+
