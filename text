@@ -38,7 +38,7 @@
 
    ----------------------------OOP CONCEPTS---------------------------------------------------
    * this is the  main wya ti create fubctions in index.php
-        <?php
+       
              class myclass{
              function myfunc()
              {
@@ -49,7 +49,7 @@
 
                 }
              
-        ?>
+        
              }
 
     class is a blue print of the the designing the objects  
@@ -77,12 +77,16 @@
 
  used to manupulate apache 
 
-        -                                                                                                   |                                                                                                  |       RewriteEngine On
-        |     RewriteCond %{REQUEST_FILENAME} !-f
-        |    RewriteCond %{REQUEST_FILENAME} !-d
-        |    RewriteRule ^(.*)$ index.php?url=$1 [L,QSA]
-        |
-  RewriteEngine On means the apache engin on we can rewrite conditions and rules
+         ------------------------------------------------                                          
+         |                                               |                                         |    RewriteEngine On                           |
+         |    RewriteCond %{REQUEST_FILENAME} !-f        |
+         |    RewriteCond %{REQUEST_FILENAME} !-d        |
+         |    RewriteRule ^(.*)$ index.php?url=$1 [L,QSA]|
+         |                                               |
+           ----------------------------------------------
+ 
+ 
+   RewriteEngine On means the apache engin on we can rewrite conditions and rules
 
   'RewriteCond %{REQUEST_FILENAME} !-f
    RewriteCond %{REQUEST_FILENAME} !-d' means if the file name in the url it should load the if if the directory then load it.
@@ -91,6 +95,85 @@
    then the rule RewriteRule ^(.*)$ index.php?url=$1 [L,QSA] means the beggining to the end any thing that in the query string pushed to the index.php , if not invalied create url and put the all things.
 
 
+   Router is a important thing.it is create a frameworks 
+    
+       URL,lets think some body searching something by the URL it may be describe the the seacrhing items.
+
+       examples,
+       http://localhost/udemy/public/product/catagory/babypowder===>Array ( [url] => product/catagory/babypowder) 
+
+
+in this creatong database connection is used database class and the main Model class for builup the connection.
+
+--------------------------------------CONFIG FILE--------------------------------------------------
+when we upload the server  or any file used in  the code we need to cnfig if we in the local server or live server.so we can used config file to this .
+
+so after add the config file this way,
 
 
 
+
+
+
+
+
+we can see this informations in the browser(localhost/udemy/public/home)
+                   Array
+(
+    [MIBDIRS] => C:/xampp/php/extras/mibs
+    [MYSQL_HOME] => \xampp\mysql\bin
+    [OPENSSL_CONF] => C:/xampp/apache/bin/openssl.cnf
+    [PHP_PEAR_SYSCONF_DIR] => \xampp\php
+    [PHPRC] => \xampp\php
+    [TMP] => \xampp\tmp
+    [HTTP_HOST] => localhost
+    [HTTP_CONNECTION] => keep-alive
+    [HTTP_CACHE_CONTROL] => max-age=0
+    [HTTP_SEC_CH_UA] => "Google Chrome";v="119", "Chromium";v="119", "Not?A_Brand";v="24"
+    [HTTP_SEC_CH_UA_MOBILE] => ?0
+    [HTTP_SEC_CH_UA_PLATFORM] => "Windows"
+    [HTTP_UPGRADE_INSECURE_REQUESTS] => 1
+    [HTTP_USER_AGENT] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+    [HTTP_ACCEPT] => text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+    [HTTP_SEC_FETCH_SITE] => none
+    [HTTP_SEC_FETCH_MODE] => navigate
+    [HTTP_SEC_FETCH_USER] => ?1
+    [HTTP_SEC_FETCH_DEST] => document
+    [HTTP_ACCEPT_ENCODING] => gzip, deflate, br
+    [HTTP_ACCEPT_LANGUAGE] => en-GB,en-US;q=0.9,en;q=0.8
+    [HTTP_COOKIE] => PHPSESSID=glqt6p2m1unh5lgkkjakickiaf
+    [PATH] => C:\Program Files\Python311\Scripts\;C:\Program Files\Python311\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\PuTTY\;C:\MinGW\bin;C:\Users\user\anaconda3\Scripts;C:\Program Files\Git\cmd;C:\Program Files\MySQL\MySQL Server 8.0\bin\;C:\Program Files\nodejs\;C:\php-8.1.23;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\user\AppData\Local\Microsoft\WindowsApps;C:\MinGW\bin;C:\Users\user\AppData\Local\JetBrains\CLion 2022.3.1\bin;D:\Program Files\PhpStorm 2023.1.1\bin;C:\Users\user\AppData\Local\Coursier\cache\arc\https\github.com\AdoptOpenJDK\openjdk8-binaries\releases\download\jdk8u292-b10\OpenJDK8U-jdk_x64_windows_hotspot_8u292b10.zip\jdk8u292-b10\bin;C:\Users\user\AppData\Local\Coursier\data\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.1.2\bin;;C:\Users\user\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\user\AppData\Roaming\npm;C:\Seleniumweb;
+    [SystemRoot] => C:\Windows
+    [COMSPEC] => C:\Windows\system32\cmd.exe
+    [PATHEXT] => .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW
+    [WINDIR] => C:\Windows
+    [SERVER_SIGNATURE] => 
+Apache/2.4.56 (Win64) OpenSSL/1.1.1t PHP/8.2.4 Server at localhost Port 80
+_________________________________________________________________________________________________
+|                                                                                               |
+|   [SERVER_SOFTWARE] => Apache/2.4.56 (Win64) OpenSSL/1.1.1t PHP/8.2.4                         |
+|   [SERVER_NAME] => localhost                                                                  |
+    [SERVER_ADDR] => ::1                                                                        |
+    [SERVER_PORT] => 80                                                                         |
+    [REMOTE_ADDR] => ::1                                                                        |
+    [DOCUMENT_ROOT] => C:/xampp/htdocs
+    [REQUEST_SCHEME] => http
+    [CONTEXT_PREFIX] => 
+    [CONTEXT_DOCUMENT_ROOT] => C:/xampp/htdocs
+    [SERVER_ADMIN] => postmaster@localhost
+    [SCRIPT_FILENAME] => C:/xampp/htdocs/udemy/public/index.php
+    [REMOTE_PORT] => 53368
+    [GATEWAY_INTERFACE] => CGI/1.1
+    [SERVER_PROTOCOL] => HTTP/1.1
+    [REQUEST_METHOD] => GET
+    [QUERY_STRING] => 
+    [REQUEST_URI] => /udemy/public/
+    [SCRIPT_NAME] => /udemy/public/index.php
+    [PHP_SELF] => /udemy/public/index.php
+    [REQUEST_TIME_FLOAT] => 1700208557.644
+    [REQUEST_TIME] => 1700208557
+)
+____________________________________________________________________________________________
+  
+this brackets details are pretty good informayions ,
+    it tells what server we are in now 

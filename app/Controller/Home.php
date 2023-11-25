@@ -12,6 +12,8 @@ class Home extends Controller
 
     public function index()
     {    
+        $db = new Database();
+        $db->query();
         $data['title'] = "Home";
         $viewPath = $this->view('home',$data);
         if ($viewPath) {
@@ -22,15 +24,6 @@ class Home extends Controller
             echo "Could not find the view file";
         }
     }
-    /*public function edit(){
-        echo "home editing";
-
-    }
-    public function delete(){
-
-        echo "home deleteing";
-
-    }*/
     
     
 }
