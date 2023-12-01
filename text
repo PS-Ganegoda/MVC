@@ -177,3 +177,55 @@ ________________________________________________________________________________
   
 this brackets details are pretty good informayions ,
     it tells what server we are in now 
+
+_______________________________________PDO_________________________________________________________
+
+    when we concider the PDO it is used for writing SQL QUeries.so sql queries helps to crud(i think in that way)
+
+    lets think you want to loging to systems it used to get email and password by these queries
+
+
+____________________________________Home.php file ___________________________________________
+The provided PHP code is part of a class named Home that extends another class called Controller. The purpose of this code is to define a method named index() within the Home class. Let me break down the code for you:
+
+<Class Definition:>
+
+              class Home extends Controller
+                      {
+
+
+This declares a class named Home that extends (inherits from) another class called Controller. Inheritance allows the Home class to inherit properties and methods from the Controller class.
+
+<Method Definition:>
+
+
+          public function index()
+            {
+
+This declares a public method named index within the Home class. The index method is a special method often used as an entry point for a particular functionality.
+
+<Data Assignment:>
+
+            $data['title'] = "Home";
+
+
+This creates an associative array named $data with a key-value pair. In this case, it sets the key 'title' to the value "Home". This data is likely intended to be passed to a view for rendering.
+
+<View Method Call:>
+
+          $viewPath = $this->view('home', $data);
+
+This calls a method named view that presumably belongs to the parent Controller class. The method is called with the parameters 'home' (which might represent the view file name) and the $data array. The return value is stored in the variable $viewPath. This method is expected to return the path to the view file.
+
+<View File Inclusion:>
+
+    require ($viewPath);
+
+
+This line uses the require statement to include (and execute) the file whose path is stored in the $viewPath variable. This is typically a PHP file responsible for rendering the HTML content of the page. The require statement ensures that the view file is included, and its contents are processed.
+
+In summary, this PHP code is defining a method (index()) within a class (Home) that sets some data, calls a method to get the path of a view file, and then includes that view file using require. This structure is common in MVC (Model-View-Controller) architecture, where the controller handles user input, prepares data, and passes it to the view for presentation.
+
+
+
+s
