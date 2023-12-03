@@ -16,6 +16,9 @@ if($_SERVER['SERVER_NAME'] == 'localhost')
    define('DBUSER', 'root');
    define('DBPASS', '');
    define('DBDRIVER', 'mysql');
+  
+   //www.azroses.com
+   define('ROOT', 'http://localhost/udemy1/public');
 } else{
     // database config for live server
     define('DBHOST', 'localhost');
@@ -24,3 +27,5 @@ if($_SERVER['SERVER_NAME'] == 'localhost')
    define('DBPASS', '');
    define('DBDRIVER', 'mysql');
 }
+
+

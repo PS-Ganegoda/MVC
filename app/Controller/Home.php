@@ -4,8 +4,9 @@ class Home extends Controller
 {
     public function index()
     {
+       $db = new Database();
+       $db->create_tables();
        
-
         
         $data['title'] = "Home";
        
@@ -13,6 +14,10 @@ class Home extends Controller
         require ($viewPath);
 
         
+    }
+    public function login()
+    {
+        echo 'login';
     }
 }
 

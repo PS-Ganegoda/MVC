@@ -2,14 +2,14 @@
 
 class Database
 {
-    private function connect()
+    private function connect() //create connection with databases
     {
         $str = DBDRIVER . ":host=" . DBHOST . ";dbname=" . DBNAME;
     
         return new PDO($str,DBUSER,DBPASS);
     }
 
-    public function query($query, $data = [], $type = 'object')
+    public function query($query, $data = [], $type = 'object')     //create queries
     {
         $con = $this->connect(); 
 
