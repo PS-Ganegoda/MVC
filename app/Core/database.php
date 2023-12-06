@@ -40,13 +40,22 @@ class Database
     }
     public function create_tables(){
         $query = "
-            CREATE TABLE IF NOT EXISTS `users` (
+        CREATE TABLE IF NOT EXISTS `users` (
             `ID` int(11) NOT NULL AUTO_INCREMENT,
             `email` varchar(100) NOT NULL,
             `password` varchar(255) NOT NULL,
             `date` date NOT NULL,
-            PRIMARY KEY (`ID`)
-           ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
+            `FirstName` varchar(30) NOT NULL,
+            `LastName` varchar(30) NOT NULL,
+            `role` varchar(20) NOT NULL,
+            PRIMARY KEY (`ID`),
+            KEY `email` (`email`),
+            KEY `FirstName` (`FirstName`),
+            KEY `LastName` (`LastName`),
+            KEY `date` (`date`)
+        )
+        ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
+        
         
         ";
         $this->query($query);

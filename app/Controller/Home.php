@@ -4,8 +4,8 @@ class Home extends Controller
 {
     public function index()
     {
-       $db = new Database();
-       $db->create_tables();
+      $db = new Database();
+    $db->create_tables();
        
         
         $data['title'] = "Home";
@@ -15,10 +15,7 @@ class Home extends Controller
 
         
     }
-    public function login()
-    {
-        echo 'login';
-    }
+  
 }
 
 ?>

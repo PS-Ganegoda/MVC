@@ -1,7 +1,7 @@
 <?php
 class Controller
 {
-    public function view($view, $data = [])
+    protected function view($view, $data = [])
     {
         extract($data);
 
@@ -11,13 +11,7 @@ class Controller
         if (file_exists($filename)) {
             require $filename;
         } else {
-            echo "Could not find the view file: " . $filename;
+            throw new Exception("Could not find the view file: " . $filename);
         }
     }
 }
-
- 
-
-
-
- 
